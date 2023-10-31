@@ -17,10 +17,14 @@ void AteaIreki() {
   Serial.println("Atea Irekita");
   Serial.print("Atearen Posizioa: ");
   Serial.print(AteaPosizioa);
+  if !KotxeaDago { 
+    AteaItxi();
+  }
 }
 
 void KotxeaDago() {
-  //TODO
+  //TODO 
+  /*GERTUTASUN SENTSOREAK DETEKTATUTA*/
 }
 
 void AteaItxi() {

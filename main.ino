@@ -17,7 +17,7 @@ void AteaIreki() {
   Serial.println("Atea Irekita");
   Serial.print("Atearen Posizioa: ");
   Serial.print(AteaPosizioa);
-  if !KotxeaDago { 
+  if (!KotxeaDago) { 
     AteaItxi();
   }
 }

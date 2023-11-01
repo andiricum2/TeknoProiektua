@@ -3,12 +3,13 @@
 Servo servoMotor;
 int AteaPosizioa = 90;
 int DenboraProzesua = 2000;
-int DenboraIxteko = 1000;
-
+int DenboraIxteko = 3000;
 int UltraSoinuSentsorePina = 7;
 
-long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina)
-{
+int LedGorria = 12;
+int LedBerdea = 13;
+
+long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
   pinMode(triggerPina, OUTPUT);
   digitalWrite(triggerPina, LOW);
   delayMicroseconds(2);
@@ -21,13 +22,19 @@ long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina)
 
 void setup() {
   servoMotor.attach(9);
+  pinMode(LedGorria, OUTPUT);
+  pinMode(LedBerdea, OUTPUT);
   Serial.begin(9600);
+  digitalWrite(LedGorria, HIGH);
 }
 
 void AteaIreki() {
   Serial.println("Atea Irekitzen");
   AteaPosizioa = 0;
   servoMotor.write(AteaPosizioa);
+  digitalWrite(LedGorria, HIGH);
+  digitalWrite(LedBerdea, LOW);
+
   if (servoMotor.read() == 0) {
     Serial.println("Atea Irekita");
     Serial.print("Atearen Posizioa: ");
@@ -49,6 +56,9 @@ void AteaItxi() {
     Serial.println("Atea Ixten");
     AteaPosizioa = 90;
     servoMotor.write(AteaPosizioa);
+    digitalWrite(LedGorria, LOW);
+    digitalWrite(LedBerdea, HIGH);  
+
     if (servoMotor.read() == 90) {
       Serial.println("Atea Itxita");
       Serial.print("Atearen Posizioa: ");

@@ -2,10 +2,13 @@
 
 Servo servoMotor;
 int AteaPosizioa = 90;
-int Denbora = 2000;
+int DenboraProzesua = 2000;
+int DenboraIxteko = 1000;
+
+int UltraSoinuSentsorePina = 7;
 
 void setup() {
-  servoMotor.attach(9); // Serboa 9. pinean (Analogikoa)
+  servoMotor.attach(9);
   Serial.begin(9600);
 }
 
@@ -13,33 +16,35 @@ void AteaIreki() {
   Serial.println("Atea Irekitzen");
   AteaPosizioa = 0;
   servoMotor.write(AteaPosizioa);
-  delay(Denbora);
+  delay(DenboraProzesua);
   Serial.println("Atea Irekita");
   Serial.print("Atearen Posizioa: ");
-  Serial.print(AteaPosizioa);
-  if (!KotxeaDago) { 
-    AteaItxi();
-  }
-}
-
-void KotxeaDago() {
-  //TODO 
-  /*GERTUTASUN SENTSOREAK DETEKTATUTA*/
+  Serial.println(AteaPosizioa);
+  delay(DenboraIxteko);
+  AteaItxi();
 }
 
 void AteaItxi() {
-  Serial.println("Atea Ixten");
-  AteaPosizioa = 90;
-  servoMotor.write(AteaPosizioa);
-  delay(Denbora);
-  Serial.println("Atea Itxita");
-  Serial.println("Atearen Posizioa: ");
-  Serial.println(AteaPosizioa);
+  int Distantzia = analogRead(UltraSoinuSentsorePina);
+  Serial.println(Distantzia);
+  if (Distantzia < 400) {
+    Serial.println("Kotxea 1 metro baino gertuago dago. Ezin da atea Itxi. 3 Segundu barru berriz saiatzen...");
+    delay(3000);
+    AteaItxi();
+  } else {
+    Serial.println("Atea Ixten");
+    AteaPosizioa = 90;
+    servoMotor.write(AteaPosizioa);
+    delay(DenboraProzesua);
+    Serial.println("Atea Itxita");
+    Serial.print("Atearen Posizioa: ");
+    Serial.println(AteaPosizioa);
+  }
 }
 
 void loop() {
   String Kodigoak[] = {"Estanix", "Andoni"};
-  String esk; //Erabiltzailea Sartutako Kodea
+  String esk; // Erabiltzailea Sartutako Kodea
 
   Serial.println("Idatzi Zure Kodigoa: ");
   while (Serial.available() == 0) {

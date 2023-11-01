@@ -1,4 +1,4 @@
-#include </library/servo/Servo.h>
+#include <Servo.h>
 
 Servo servoMotor;
 int AteaPosizioa = 90;

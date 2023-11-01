@@ -7,6 +7,18 @@ int DenboraIxteko = 1000;
 
 int UltraSoinuSentsorePina = 7;
 
+long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina)
+{
+  pinMode(triggerPina, OUTPUT);
+  digitalWrite(triggerPina, LOW);
+  delayMicroseconds(2);
+  digitalWrite(triggerPina, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPina, LOW);
+  pinMode(echoPina, INPUT);
+  return pulseIn(echoPina, HIGH);
+}
+
 void setup() {
   servoMotor.attach(9);
   Serial.begin(9600);
@@ -16,43 +28,42 @@ void AteaIreki() {
   Serial.println("Atea Irekitzen");
   AteaPosizioa = 0;
   servoMotor.write(AteaPosizioa);
-  delay(DenboraProzesua);
-  Serial.println("Atea Irekita");
-  Serial.print("Atearen Posizioa: ");
-  Serial.println(AteaPosizioa);
-  delay(DenboraIxteko);
-  AteaItxi();
+  if (servoMotor.read() == 0) {
+    Serial.println("Atea Irekita");
+    Serial.print("Atearen Posizioa: ");
+    Serial.println(AteaPosizioa);
+    delay(DenboraIxteko);
+    AteaItxi();
+  }
 }
 
 void AteaItxi() {
-  int Distantzia = analogRead(UltraSoinuSentsorePina);
-  Serial.println(Distantzia);
-  if (Distantzia < 400) {
-    Serial.println("Kotxea 1 metro baino gertuago dago. Ezin da atea Itxi. 3 Segundu barru berriz saiatzen...");
+  int DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePina, UltraSoinuSentsorePina);
+  float DistantziaCm = 0.01723 * DistantziaAnalogikoa;
+
+  if (DistantziaCm < 100.0) { // CM tan (100cm)
+    Serial.println("Kotxea metro bat baño gertuago dago. Ezin da atea Itxi. 3 Segundu barru berriz saiatzen...");
     delay(3000);
     AteaItxi();
   } else {
     Serial.println("Atea Ixten");
     AteaPosizioa = 90;
     servoMotor.write(AteaPosizioa);
-    delay(DenboraProzesua);
-    Serial.println("Atea Itxita");
-    Serial.print("Atearen Posizioa: ");
-    Serial.println(AteaPosizioa);
+    if (servoMotor.read() == 90) {
+      Serial.println("Atea Itxita");
+      Serial.print("Atearen Posizioa: ");
+      Serial.println(AteaPosizioa);
+    }
   }
 }
 
 void loop() {
   String Kodigoak[] = {"Estanix", "Andoni"};
-  String esk; // Erabiltzailea Sartutako Kodea
+  String esk;
 
   Serial.println("Idatzi Zure Kodigoa: ");
   while (Serial.available() == 0) {
-  /* Loop infinito hau ez gertatzeko.
-  Kode hau ez da existitzen.Idatzi Zure Kodigoa: 
-  Kode hau ez da existitzen.Idatzi Zure Kodigoa: 
-  ...
-  */
+    // Itxaron kodea sartzeko
   }
 
   esk = Serial.readString();

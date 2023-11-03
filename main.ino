@@ -68,7 +68,7 @@ void AteaItxi() {
 }
 
 void loop() {
-  String Kodigoak[] = {"Estanix", "Andoni"};
+  String Kodigoak[] = {"Kaixo", "Oteitza"};
   String esk;
 
   Serial.println("Idatzi Zure Kodigoa: ");

@@ -76,7 +76,7 @@ void loop() {
     // Itxaron kodea sartzeko
   }
 
-  esk = Serial.readString();
+  esk = Serial.readString(); // Erabiltzaileak Sartutako Kodea
 
   bool KodeaExistitzenDa = false;
 

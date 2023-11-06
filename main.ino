@@ -32,8 +32,8 @@ void AteaIreki() {
   Serial.println("Atea Irekitzen");
   AteaPosizioa = 0;
   servoMotor.write(AteaPosizioa);
-  digitalWrite(LedGorria, HIGH);
-  digitalWrite(LedBerdea, LOW);
+  digitalWrite(LedGorria, LOW);
+  digitalWrite(LedBerdea, HIGH);
 
   if (servoMotor.read() == 0) {
     /* Serial.println("Atea Irekita");
@@ -56,8 +56,8 @@ void AteaItxi() {
     Serial.println("Atea Ixten");
     AteaPosizioa = 90;
     servoMotor.write(AteaPosizioa);
-    digitalWrite(LedGorria, LOW);
-    digitalWrite(LedBerdea, HIGH);  
+    digitalWrite(LedGorria, HIGH);
+    digitalWrite(LedBerdea, LOW);  
 
     if (servoMotor.read() == 90) {
       /* Serial.println("Atea Itxita");

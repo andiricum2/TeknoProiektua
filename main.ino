@@ -36,9 +36,9 @@ void AteaIreki() {
   digitalWrite(LedBerdea, LOW);
 
   if (servoMotor.read() == 0) {
-    Serial.println("Atea Irekita");
+    /* Serial.println("Atea Irekita");
     Serial.print("Atearen Posizioa: ");
-    Serial.println(AteaPosizioa);
+    Serial.println(AteaPosizioa); */
     delay(DenboraIxteko);
     AteaItxi();
   }
@@ -60,9 +60,9 @@ void AteaItxi() {
     digitalWrite(LedBerdea, HIGH);  
 
     if (servoMotor.read() == 90) {
-      Serial.println("Atea Itxita");
+      /* Serial.println("Atea Itxita");
       Serial.print("Atearen Posizioa: ");
-      Serial.println(AteaPosizioa);
+      Serial.println(AteaPosizioa); */
     }
   }
 }

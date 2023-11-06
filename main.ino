@@ -6,8 +6,11 @@ int DenboraProzesua = 2000;
 int DenboraIxteko = 3000;
 int UltraSoinuSentsorePina = 7;
 
+int LedUrdina = 8;
 int LedGorria = 12;
 int LedBerdea = 13;
+
+bool EzinDaItxi = false;
 
 long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
   pinMode(triggerPina, OUTPUT);
@@ -22,6 +25,7 @@ long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
 
 void setup() {
   servoMotor.attach(9);
+  pinMode(LedUrdina, OUTPUT);
   pinMode(LedGorria, OUTPUT);
   pinMode(LedBerdea, OUTPUT);
   Serial.begin(9600);
@@ -44,15 +48,19 @@ void AteaIreki() {
   }
 }
 
+
 void AteaItxi() {
   int DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePina, UltraSoinuSentsorePina);
   float DistantziaCm = 0.01723 * DistantziaAnalogikoa;
 
   if (DistantziaCm < 100.0) { // CM tan (100cm)
     Serial.println("Kotxea metro bat baño gertuago dago. Ezin da atea Itxi. 3 Segundu barru berriz saiatzen...");
+    EzinDaItxi = true;
+    ledurdina();
     delay(3000);
     AteaItxi();
   } else {
+    EzinDaItxi = false;
     Serial.println("Atea Ixten");
     AteaPosizioa = 90;
     servoMotor.write(AteaPosizioa);
@@ -64,6 +72,15 @@ void AteaItxi() {
       Serial.print("Atearen Posizioa: ");
       Serial.println(AteaPosizioa); */
     }
+  }
+}
+
+void ledurdina() {
+  while (EzinDaItxi) {
+  digitalWrite(LedUrdina, HIGH);
+  delay(250);
+  digitalWrite(LedUrdina, LOW);
+  delay(250);
   }
 }
 

@@ -45,6 +45,7 @@ void AteaIreki() {
     Serial.print("Atearen Posizioa: ");
     Serial.println(AteaPosizioa); */
     delay(DenboraIxteko);
+    digitalWrite(LedBerdea, LOW);
     AteaItxi();
   }
 }
@@ -77,6 +78,7 @@ void AteaItxi() {
     /* Serial.println("Atea Itxita");
     Serial.print("Atearen Posizioa: ");
     Serial.println(AteaPosizioa); */
+    digitalWrite(LedGorria, LOW);
   }
 }
 

@@ -4,14 +4,16 @@ Servo servoMotor;
 int AteaPosizioa = 90;
 int DenboraProzesua = 2000;
 int DenboraIxteko = 3000;
-int UltraSoinuSentsorePina = 7;
+int UltraSoinuSentsorePinaTrigger = 5;
+int UltraSoinuSentsorePinaEcho = 6;
+
 
 int LedUrdina = 8;
 int LedGorria = 12;
 int LedBerdea = 13;
 
-int DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePina, UltraSoinuSentsorePina);
-float DistantziaCm = 0.01723 * DistantziaAnalogikoa;
+int DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
+float DistantziaCm = DistantziaAnalogikoa / 59;
 
 long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
   pinMode(triggerPina, OUTPUT);
@@ -51,18 +53,21 @@ void AteaIreki() {
 }
 
 void AteaItxi() {
+  DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
+  DistantziaCm = DistantziaAnalogikoa / 59;
+  
   if (DistantziaCm < 100.0) {
     Serial.println("Kotxea metro bat baño gertuago dago. Ezin da atea Itxi.");
     
     while (DistantziaCm < 100.0) {
       digitalWrite(LedUrdina, HIGH);
       delay(250);
-      DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePina, UltraSoinuSentsorePina);
-      DistantziaCm = 0.01723 * DistantziaAnalogikoa;
+      DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
+      DistantziaCm = DistantziaAnalogikoa / 59;
       digitalWrite(LedUrdina, LOW);
       delay(250);
-      DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePina, UltraSoinuSentsorePina);
-      DistantziaCm = 0.01723 * DistantziaAnalogikoa;
+      DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
+      DistantziaCm = DistantziaAnalogikoa / 59;
     }
     
     digitalWrite(LedUrdina, LOW);

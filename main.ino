@@ -1,30 +1,19 @@
 #include <Servo.h>
 
 Servo servoMotor;
+
 int AteaPosizioa = 90;
 int DenboraProzesua = 2000;
 int DenboraIxteko = 3000;
+
 int UltraSoinuSentsorePinaTrigger = 5;
 int UltraSoinuSentsorePinaEcho = 6;
-
 
 int LedUrdina = 8;
 int LedGorria = 12;
 int LedBerdea = 13;
 
-int DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
-float DistantziaCm = DistantziaAnalogikoa / 59;
-
-long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
-  pinMode(triggerPina, OUTPUT);
-  digitalWrite(triggerPina, LOW);
-  delayMicroseconds(2);
-  digitalWrite(triggerPina, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(triggerPina, LOW);
-  pinMode(echoPina, INPUT);
-  return pulseIn(echoPina, HIGH);
-}
+float DistantziaCm;
 
 void setup() {
   servoMotor.attach(9);
@@ -33,6 +22,18 @@ void setup() {
   pinMode(LedBerdea, OUTPUT);
   Serial.begin(9600);
   digitalWrite(LedGorria, HIGH);
+  pinMode(UltraSoinuSentsorePinaTrigger, OUTPUT);
+  pinMode(UltraSoinuSentsorePinaEcho, INPUT);
+  digitalWrite(UltraSoinuSentsorePinaTrigger, LOW);
+}
+
+long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
+  digitalWrite(triggerPina, LOW);
+  delayMicroseconds(2);
+  digitalWrite(triggerPina, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPina, LOW);
+  return pulseIn(echoPina, HIGH);
 }
 
 void AteaIreki() {
@@ -42,10 +43,7 @@ void AteaIreki() {
   digitalWrite(LedGorria, LOW);
   digitalWrite(LedBerdea, HIGH);
 
-  if (servoMotor.read() == 0) {
-    /* Serial.println("Atea Irekita");
-    Serial.print("Atearen Posizioa: ");
-    Serial.println(AteaPosizioa); */
+  while (servoMotor.read() == 0) {
     delay(DenboraIxteko);
     digitalWrite(LedBerdea, LOW);
     AteaItxi();
@@ -53,36 +51,29 @@ void AteaIreki() {
 }
 
 void AteaItxi() {
-  DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
-  DistantziaCm = DistantziaAnalogikoa / 59;
-  
+  DistantziaCm = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho) / 59;
+
   if (DistantziaCm < 100.0) {
     Serial.println("Kotxea metro bat baño gertuago dago. Ezin da atea Itxi.");
-    
+
     while (DistantziaCm < 100.0) {
       digitalWrite(LedUrdina, HIGH);
       delay(250);
-      DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
-      DistantziaCm = DistantziaAnalogikoa / 59;
+      DistantziaCm = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho) / 59;
       digitalWrite(LedUrdina, LOW);
       delay(250);
-      DistantziaAnalogikoa = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho);
-      DistantziaCm = DistantziaAnalogikoa / 59;
+      DistantziaCm = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho) / 59;
     }
-    
+
     digitalWrite(LedUrdina, LOW);
-  } 
+  }
 
   Serial.println("Atea Ixten");
   AteaPosizioa = 90;
   servoMotor.write(AteaPosizioa);
   digitalWrite(LedGorria, HIGH);
-  digitalWrite(LedBerdea, LOW);  
-
+  digitalWrite(LedBerdea, LOW);
   if (servoMotor.read() == 90) {
-    /* Serial.println("Atea Itxita");
-    Serial.print("Atearen Posizioa: ");
-    Serial.println(AteaPosizioa); */
     digitalWrite(LedGorria, LOW);
   }
 }
@@ -108,7 +99,6 @@ void loop() {
     }
   }
 
-  // AGINDU BEREZIAK
   if (esk.equalsIgnoreCase("itxi")) {
     AteaItxi();
     KodeaExistitzenDa = true;
@@ -116,7 +106,6 @@ void loop() {
     AteaIreki();
     KodeaExistitzenDa = true;
   }
-  
 
   if (!KodeaExistitzenDa) {
     Serial.println("Kode hau ez da existitzen.");

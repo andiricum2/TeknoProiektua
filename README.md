@@ -16,11 +16,7 @@
 
 ---
 
-<p align="center"> Aurkibidea:
-    <br> 
-</p>
-
-## 📝 Table of Contents
+## 📝 Aurkibidea
 
 - [Honi Buruz](#info)
 - [Hasteko](#hasteko)

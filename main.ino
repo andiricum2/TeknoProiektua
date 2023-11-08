@@ -108,6 +108,16 @@ void loop() {
     }
   }
 
+  // AGINDU BEREZIAK
+  if (esk.equalsIgnoreCase("itxi")) {
+    AteaItxi();
+    KodeaExistitzenDa = true;
+  } else if (esk.equalsIgnoreCase("ireki")) {
+    AteaIreki();
+    KodeaExistitzenDa = true;
+  }
+  
+
   if (!KodeaExistitzenDa) {
     Serial.println("Kode hau ez da existitzen.");
   }

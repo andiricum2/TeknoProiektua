@@ -13,6 +13,8 @@ int LedUrdina = 8;
 int LedGorria = 12;
 int LedBerdea = 13;
 
+int Soinua = 3;
+
 float DistantziaCm;
 
 void setup() {
@@ -37,6 +39,7 @@ long UltraSoinuSentsoreDistantzia(int triggerPina, int echoPina) {
 }
 
 void AteaIreki() {
+  noTone(Soinua);
   Serial.println("Atea Irekitzen");
   AteaPosizioa = 0;
   servoMotor.write(AteaPosizioa);
@@ -51,6 +54,7 @@ void AteaIreki() {
 }
 
 void AteaItxi() {
+  noTone(Soinua);
   DistantziaCm = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho) / 59;
 
   if (DistantziaCm < 100.0) {
@@ -58,7 +62,9 @@ void AteaItxi() {
 
     while (DistantziaCm < 100.0) {
       digitalWrite(LedUrdina, HIGH);
+      tone(Soinua, 440);
       delay(250);
+      noTone(Soinua);
       DistantziaCm = UltraSoinuSentsoreDistantzia(UltraSoinuSentsorePinaTrigger, UltraSoinuSentsorePinaEcho) / 59;
       digitalWrite(LedUrdina, LOW);
       delay(250);

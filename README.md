@@ -38,6 +38,17 @@ Arduinoan Honako hau montatu.
 
 ![image](https://github.com/andiricum2/TeknoProiektua/assets/62946099/33d0f2fa-f71e-405e-b56d-ec393efd8704)
 
+### ⚙️ Materiala
+
+- Arduino UNO Mikrokontrolagailua.
+- 3 LED. (1 Gorria, 1 Berdea, 1 Urdina)
+- 3 Erresistentzia (1kΩ-koak). (LED argientzako)
+- Miniplaka bat.
+- Ultrasoinu bidezko gertutasun sentsore bat.
+- ServoMotore bat.
+- Buzzer bat. (Soinuarentzat)
+- Konektatze kableak.
+
 Arduinora aginduak bidali.
 
 ## 🎈 Erabilera <a name="erabilera"></a>

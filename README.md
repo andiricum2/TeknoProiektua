@@ -36,7 +36,7 @@ Teknologiako ikasgaiean eskatutako proiektuaren garapena.
 Arduino IDE-a ireki eta ```main.ino```-ko kodea kopiatu eta itsatsi.
 Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 
-![image](https://github.com/andiricum2/TeknoProiektua/assets/62946099/33d0f2fa-f71e-405e-b56d-ec393efd8704)
+![image](https://github.com/andiricum2/TeknoProiektua/assets/62946099/e1029b1f-09e8-4b9c-b1a7-cef42f77d14d)
 
 ### ⚙️ Materiala
 

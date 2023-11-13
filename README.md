@@ -53,6 +53,8 @@ Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 
 Definitutako kodigo bat sartu ``Serial Monitorean`` eta objetua gertu badago ez da atea itxiko, bestela bai.
 
+https://github.com/andiricum2/TeknoProiektua/assets/62946099/ceaed660-ada3-4bca-b8e6-b147e2cf11ee
+
 ## ⛏️ Erabilitakoak <a name = "erabilitakoak"></a>
 
 - [Arduino](https://www.arduino.cc) - Hardware eta Softwarea

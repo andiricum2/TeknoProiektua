@@ -64,13 +64,15 @@ Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 - Buzzer bat. (Soinuarentzat)
 - Konektatze kableak.
 
-![BLOKE DIAGRAMA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/164473c2-7087-48b4-adaf-c606f4ce403a)
-
 ## 🎈 Erabilera <a name="erabilera"></a>
 
 Definitutako kodigo bat sartu ``Serial Monitorean`` eta objetua gertu badago ez da atea itxiko, bestela bai.
 
 https://github.com/andiricum2/TeknoProiektua/assets/62946099/ceaed660-ada3-4bca-b8e6-b147e2cf11ee
+
+### 📋 Bloke Diagrama
+
+![BLOKE DIAGRAMA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/164473c2-7087-48b4-adaf-c606f4ce403a)
 
 ## ⛏️ Erabilitakoak <a name = "erabilitakoak"></a>
 

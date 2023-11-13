@@ -15,7 +15,7 @@
 </div>
 
 <div align="center">
-Egoera: Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu batzuk betetzeko proiektu bat egokitu zaigu. Honen aurrean, atea itxi eta ireki dadin kodigoan zehaztutako baldintzak bete beharko ditu. Hau lortzeko arduino bidez kontrolatutako sentsore batzuk erabili ditugu, zehazki <a href="/#%EF%B8%8F-materiala-">Materialetan</a> ageri direnak.
+Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu batzuk betetzeko proiektu bat egokitu zaigu. Honen aurrean, atea itxi eta ireki dadin kodigoan zehaztutako baldintzak bete beharko ditu. Hau lortzeko arduino bidez kontrolatutako sentsore batzuk erabili ditugu, zehazki <a href="/#%EF%B8%8F-materiala-">Materialetan</a> ageri direnak.
 </div>
 
 ---
@@ -23,6 +23,7 @@ Egoera: Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu ba
 ## 📝 Aurkibidea
 
 - [Honi Buruz](#info)
+- [Beste Aukera Batzuk](#besteaukerak)
 - [Hasteko](#hasteko)
 - [Instalazio Prozesua](#instalazioa)
 - [Erabilera](#erabilera)
@@ -34,6 +35,16 @@ Egoera: Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu ba
 ## 🧐 Honi Buruz <a name = "info"></a>
 
 Teknologiako ikasgaiean eskatutako proiektuaren garapena.
+
+## ❓Beste Aukera Batzuk <a name = "besteaukerak"></a>
+
+Guk planteatutako beste aukera batzuk honako hauek izango lirateke:
+- Sentsoreen partez denbora kontrolagailuarekin
+- Presion sentsoreen bidez, kotxea noiz joan den jakiteko.
+- Kode bat sartu beharrean matrikularekin irekitzea.
+- Mugimendu sentsoreen bidez. (Ultrasoinu Sentsorea)
+
+Hauetatik gure aukera azkenekoa izan da, Ultrasoinu Sentsoreen bidez.
 
 ## 🏁 Hasteko <a name = "hasteko"></a>
 

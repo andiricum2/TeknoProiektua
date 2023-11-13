@@ -15,7 +15,7 @@
 </div>
 
 <div align="center">
-Egoera: Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu batzuk betetzeko proiektu bat egokitu zaigu. Honen aurrean, atea itxi eta ireki dadin kodigoan zehaztutako baldintzak bete beharko ditu. Hau lortzeko arduino bidez kontrolatutako sentsore batzuk erabili ditugu, zehazki [Materialetan](#materiala) ageri direnak.
+Egoera: Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu batzuk betetzeko proiektu bat egokitu zaigu. Honen aurrean, atea itxi eta ireki dadin kodigoan zehaztutako baldintzak bete beharko ditu. Hau lortzeko arduino bidez kontrolatutako sentsore batzuk erabili ditugu, zehazki <a href="/#%EF%B8%8F-materiala-">Materialetan</a> ageri direnak.
 </div>
 
 ---

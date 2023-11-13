@@ -36,7 +36,7 @@ Teknologiako ikasgaiean eskatutako proiektuaren garapena.
 Arduino IDE-a ireki eta ```main.ino```-ko kodea kopiatu eta itsatsi.
 Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 
-![image](https://github.com/andiricum2/TeknoProiektua/assets/62946099/e1029b1f-09e8-4b9c-b1a7-cef42f77d14d)
+![MONTAIA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/e1029b1f-09e8-4b9c-b1a7-cef42f77d14d)
 
 ### ⚙️ Materiala
 
@@ -48,6 +48,8 @@ Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 - ServoMotore bat.
 - Buzzer bat. (Soinuarentzat)
 - Konektatze kableak.
+
+![BLOKE DIAGRAMA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/164473c2-7087-48b4-adaf-c606f4ce403a)
 
 ## 🎈 Erabilera <a name="erabilera"></a>
 

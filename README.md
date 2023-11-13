@@ -14,6 +14,10 @@
 
 </div>
 
+<div align="center">
+Egoera: Parkineko ate bat Ireki eta itxi egiteko eta bigarren mailako prozesu batzuk betetzeko proiektu bat egokitu zaigu. Honen aurrean, atea itxi eta ireki dadin kodigoan zehaztutako baldintzak bete beharko ditu. Hau lortzeko arduino bidez kontrolatutako sentsore batzuk erabili ditugu, zehazki [Materialetan](#materiala) ageri direnak.
+</div>
+
 ---
 
 ## 📝 Aurkibidea
@@ -38,7 +42,7 @@ Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 
 ![MONTAIA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/e1029b1f-09e8-4b9c-b1a7-cef42f77d14d)
 
-### ⚙️ Materiala
+### ⚙️ Materiala <a name = "materiala"></a>>
 
 - Arduino UNO Mikrokontrolagailua.
 - 3 LED. (1 Gorria, 1 Berdea, 1 Urdina)

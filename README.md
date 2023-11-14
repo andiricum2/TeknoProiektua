@@ -76,7 +76,7 @@ https://github.com/andiricum2/TeknoProiektua/assets/62946099/ceaed660-ada3-4bca-
 
 ### ⚡Eskema Elektrikoa
 
-
+![ESKEMA ELEKTRIKOA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/5febc231-f625-45df-9669-8ab71081a1e6)
 
 ## ⛏️ Erabilitakoak <a name = "erabilitakoak"></a>
 

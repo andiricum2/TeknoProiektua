@@ -62,7 +62,7 @@ Arduinoan Honako hau montatu eta Arduinora aginduak bidali.
 - Ultrasoinu bidezko gertutasun sentsore bat.
 - ServoMotore bat.
 - Buzzer bat. (Soinuarentzat)
-- Konektatze kableak.
+- Dupont kable arrak.
 
 ## 🎈 Erabilera <a name="erabilera"></a>
 
@@ -73,6 +73,12 @@ https://github.com/andiricum2/TeknoProiektua/assets/62946099/ceaed660-ada3-4bca-
 ### 📋 Bloke Diagrama
 
 ![BLOKE DIAGRAMA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/164473c2-7087-48b4-adaf-c606f4ce403a)
+
+1. Kode zuzena sartu den balioztatzen du.
+2. Kodea zuzena bada atea ireki egiten da.
+3. Irekitzerakoan 10s itxoiten ditu kotxea pasa arte.
+4. Kotxea 10s horiek pasatzerakoan barreratik gertu badago ez da itxiko.
+5. Azkenik, kotxea atetik sartu edo atera egin bada, atea itxi egingo da.
 
 ### ⚡Eskema Elektrikoa
 

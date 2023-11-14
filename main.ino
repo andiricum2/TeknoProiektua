@@ -3,8 +3,7 @@
 Servo servoMotor;
 
 int AteaPosizioa = 90;
-int DenboraProzesua = 2000;
-int DenboraIxteko = 3000;
+int DenboraIxteko = 10000;
 
 int UltraSoinuSentsorePinaTrigger = 5;
 int UltraSoinuSentsorePinaEcho = 6;

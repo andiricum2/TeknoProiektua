@@ -74,6 +74,11 @@ https://github.com/andiricum2/TeknoProiektua/assets/62946099/ceaed660-ada3-4bca-
 
 ![BLOKE DIAGRAMA](https://github.com/andiricum2/TeknoProiektua/assets/62946099/164473c2-7087-48b4-adaf-c606f4ce403a)
 
+### ⚡Eskema Elektrikoa
+
+
+
 ## ⛏️ Erabilitakoak <a name = "erabilitakoak"></a>
 
 - [Arduino](https://www.arduino.cc) - Hardware eta Softwarea
+- [Tinkercad](https://www.tinkercad.com) - Simulazioa eta Eskema Elektrikoa
